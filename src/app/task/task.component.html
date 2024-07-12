@@ -1,0 +1,28 @@
+<div class="mt-5 mb-3">
+  <label for="idInput" class="form-label">ID</label>
+  <input [(ngModel)]="id" type="number" class="form-control" id="idInput" (input)="updateUserName()"/>
+</div>
+
+<div class="mb-5">
+  <label for="nameInput" class="form-label">Name</label>
+  <input [(ngModel)]="name" type="text" class="form-control" id="nameInput" (input)="updateUserName()" (blur)="clearInput('name')"/>
+</div>
+
+<table class="table table-striped text-center">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>NAME</th>
+      <th>AGE</th>
+      <th>EMAIL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users; let i = index">
+      <th>{{i + 1}}</th>
+      <td>{{user.userName}}</td>
+      <td>{{user.age}}</td>
+      <td>{{user.email}}</td>
+    </tr>
+  </tbody>
+</table>
